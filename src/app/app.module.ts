@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -16,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     SidebarComponent,
     DashboardComponent,
     TopbarComponent,
-    AuthorsComponent
+    AuthorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,9 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     FontAwesomeModule,
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

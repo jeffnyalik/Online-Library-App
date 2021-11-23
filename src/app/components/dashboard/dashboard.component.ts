@@ -1,6 +1,11 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {} from '@fortawesome/fontawesome-svg-core'
-import { faBook, faCoffee, faUser, faUsers } from '@fortawesome/free-solid-svg-icons'
+
+import { faBook, faCoffee, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { BookService } from '../../services/books/book.service';
+import { Book } from '../../../models/book/book';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +16,17 @@ export class DashboardComponent implements OnInit {
   faCoffee = faCoffee;
   faBook = faBook;
   faUsers = faUsers;
+  book: Book[] = [];
+  public p: number = 1;
+  constructor(private bService: BookService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    this.bService.getAllBooks().subscribe((book: Book[])=>{
+      this.book = book
+      console.log(this.book)
+    }, error=>{console.log(error)})
   }
 
 }
