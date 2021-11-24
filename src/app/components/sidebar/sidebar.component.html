@@ -24,7 +24,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" routerLink="/all-authors">
+        <a class="nav-link collapsed" [routerLink]="['/all-authors']">
             <fa-icon [icon]="faUsers"></fa-icon>
             <span class="ml-1">All Authors</span>
         </a>
@@ -32,7 +32,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link collapsed" routerLink="/all-books">
+        <a class="nav-link collapsed" routerLink="/all-books" routerLinkActive="active-link">
             <fa-icon [icon]="faBook"></fa-icon>
             <span class="ml-1">All Books</span>
         </a>
